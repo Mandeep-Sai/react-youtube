@@ -1,0 +1,15 @@
+.results img {
+  height: 130px !important;
+  width: 250px !important;
+}
+.results .eachResult {
+}
+.results .eachResult p:first-of-type {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+}
+.results .eachResult p:nth-of-type(2) {
+  font-size: 13px;
+  color: #696969;
+}

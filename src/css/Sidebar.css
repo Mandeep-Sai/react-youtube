@@ -1,0 +1,16 @@
+.sidebar {
+  position: absolute;
+  width: 5vw;
+  height: 100vh;
+  top: 0;
+  background-color: #ffffff;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar > * {
+  font-size: 25px;
+  margin: 25px auto;
+  color: #606060;
+}
