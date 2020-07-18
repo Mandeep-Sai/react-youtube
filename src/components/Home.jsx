@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import youtube from "../api";
 import "../css/Home.css";
 import { Container, Card, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Home extends Component {
     const response = await youtube.get("videos", {
       params: {
         part: "snippet",
-        maxResults: 20,
+        maxResults: 4,
         chart: "mostPopular",
         regionCode: "DE",
         key: "AIzaSyD2V0SEzrGHbjUeAih9bXJTi8IvdZywLvY",
@@ -35,20 +36,29 @@ class Home extends Component {
             {this.state.videos.map((video) => {
               return (
                 <Col xs={4} className="mt-4">
-                  <Card>
-                    <div className="cardImage">
-                      <Card.Img
-                        variant="top"
-                        src={video.snippet.thumbnails.medium.url}
-                      />
-                      <div className="duration">1:16</div>
-                    </div>
-                    <Card.Body>
-                      <img src="" alt="" />
-                      <Card.Title>{video.snippet.title}</Card.Title>
-                      <Card.Text>{video.snippet.channelTitle}</Card.Text>
-                    </Card.Body>
-                  </Card>
+                  <Link
+                    to={{
+                      pathname: "/watch",
+                      videoProps: {
+                        mainVideo: video,
+                      },
+                    }}
+                  >
+                    <Card>
+                      <div className="cardImage">
+                        <Card.Img
+                          variant="top"
+                          src={video.snippet.thumbnails.medium.url}
+                        />
+                        <div className="duration">1:16</div>
+                      </div>
+                      <Card.Body>
+                        <img src="" alt="" />
+                        <Card.Title>{video.snippet.title}</Card.Title>
+                        <Card.Text>{video.snippet.channelTitle}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
                 </Col>
               );
             })}

@@ -39,7 +39,7 @@ export class NavBar extends Component {
     return (
       <Container fluid className="navigation">
         <Navbar variant="light">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               src="https://annezontheweb.com/wp-content/uploads/2020/03/flat1000x1000075f.u7.jpg"
               alt=""

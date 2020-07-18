@@ -1,0 +1,50 @@
+.hidebar {
+  position: absolute;
+  width: 20vw;
+  height: 100vh;
+  top: 0;
+  background-color: #ffffff;
+}
+.hidebar .logo img {
+  width: 100px;
+}
+.hidebar .logo {
+  display: block;
+  margin-left: 10%;
+  margin-top: 9px;
+}
+.hidebar .logo svg {
+  font-size: 20px;
+  cursor: pointer;
+}
+.hidebar .logo > * {
+  margin: 10px;
+}
+.hidebar .main > div {
+  display: flex;
+}
+.hidebar .main {
+  padding: 10px 0px;
+}
+.hidebar .main p {
+  margin: 0px;
+}
+.hidebar .main > div {
+  display: flex;
+
+  padding: 12px 30px;
+}
+.hidebar .main > div:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+.hidebar .main > div svg {
+  margin-top: 2px;
+  font-size: 20px;
+  color: #606060;
+}
+.hidebar .main > div p {
+  margin-left: 20% !important;
+  font-size: 14px;
+  color: black;
+}

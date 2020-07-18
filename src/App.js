@@ -3,9 +3,8 @@ import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 import Home from "./components/Home";
 import Results from "./components/Results";
-import { Grid } from "@material-ui/core";
-import youtube from "./api";
-import { SearchBar, VideoList, VideoDetails } from "./components";
+import HideBar from "./components/HideBar";
+import Watch from "./components/Watch";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -16,16 +15,25 @@ class App extends Component {
     this.state = {
       videos: [],
       selectedVideo: null,
+      show: false,
     };
   }
+  showHideBar = () => {
+    this.setState({ show: true });
+  };
+  hideHideBar = () => {
+    this.setState({ show: false });
+  };
 
   render() {
     return (
       <Router>
         <NavBar />
-        <SideBar />
+        <SideBar func={this.showHideBar} />
+        <HideBar show={this.state.show} func={this.hideHideBar} />
         <Route path="/" exact component={Home} />
         <Route path="/results" exact component={Results} />
+        <Route path="/watch" exact component={Watch} />
       </Router>
     );
   }

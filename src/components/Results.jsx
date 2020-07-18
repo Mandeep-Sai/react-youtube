@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Spinner, Container, Row, Col } from "react-bootstrap";
 import youtube from "../api";
 import "../css/Results.css";
+import { Link } from "react-router-dom";
 
 export class Results extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export class Results extends Component {
     const response = await youtube.get("search", {
       params: {
         part: "snippet",
-        maxResults: 20,
+        maxResults: 5,
         q: this.state.query,
         chart: "mostPopular",
         regionCode: "DE",
@@ -32,10 +33,8 @@ export class Results extends Component {
       const response = await youtube.get("search", {
         params: {
           part: "snippet",
-          maxResults: 20,
+          maxResults: 5,
           q: this.props.location.search.split("=")[1],
-          chart: "mostPopular",
-          regionCode: "DE",
           key: "AIzaSyD2V0SEzrGHbjUeAih9bXJTi8IvdZywLvY",
         },
       });
@@ -57,17 +56,26 @@ export class Results extends Component {
             {this.state.videos.map((video) => {
               return (
                 <Row className="mt-3 eachResult">
-                  <Col xs={3}>
-                    <img
-                      className="img-fluid"
-                      src={video.snippet.thumbnails.medium.url}
-                      alt=""
-                    />
-                  </Col>
-                  <Col style={{ marginLeft: "-20px" }}>
-                    <p>{video.snippet.title}</p>
-                    <p>{video.snippet.channelTitle}</p>
-                  </Col>
+                  <Link
+                    to={{
+                      pathname: "/watch",
+                      videoProps: {
+                        mainVideo: video,
+                      },
+                    }}
+                  >
+                    <Col xs={3}>
+                      <img
+                        className="img-fluid"
+                        src={video.snippet.thumbnails.medium.url}
+                        alt=""
+                      />
+                    </Col>
+                    <Col style={{ marginLeft: "-20px" }}>
+                      <p>{video.snippet.title}</p>
+                      <p>{video.snippet.channelTitle}</p>
+                    </Col>
+                  </Link>
                 </Row>
               );
             })}

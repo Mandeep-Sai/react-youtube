@@ -1,0 +1,78 @@
+.watch {
+  padding-top: 85px;
+  z-index: -10 !important;
+}
+.videoPlayer iframe {
+  height: 75vh;
+  width: 90%;
+  margin-left: 5%;
+}
+p {
+  margin: 0px !important;
+  color: #909090;
+}
+.videoPlayer .title {
+  margin-left: 5% !important;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+.videosList a {
+  display: flex !important;
+}
+.videosList a:hover {
+  text-decoration: none;
+}
+.videosList .info {
+  margin-left: 5%;
+}
+.videosList .info p:first-of-type {
+  font-size: 14px;
+  color: black;
+  font-weight: 600;
+}
+.videosList .info p:nth-of-type(2) {
+  font-size: 13px;
+  color: #606060;
+}
+.extraInfo {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.extraInfo {
+  display: flex;
+  justify-content: space-between;
+}
+.extraInfo > div:first-of-type {
+  display: flex;
+}
+.extraInfo > div:nth-of-type(2) {
+  display: flex;
+}
+.extraInfo > div:nth-of-type(2) > div {
+  display: flex;
+  margin: 0px 15px;
+}
+.extraInfo svg {
+  font-size: 20px;
+  margin: auto 0px;
+  color: #909090;
+}
+.extraInfo > div:nth-of-type(2) > div p {
+  margin-left: 3px !important;
+}
+.channelInfo {
+  margin: 1% 5%;
+
+  display: flex;
+  justify-content: space-between;
+}
+.channelInfo button {
+  background-color: #cc0000;
+  border: none;
+  height: 35px;
+  width: 120px;
+  color: white;
+  border-radius: 2px;
+  font-size: 14px;
+}

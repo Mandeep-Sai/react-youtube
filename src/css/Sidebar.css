@@ -1,5 +1,5 @@
 .sidebar {
-  position: absolute;
+  position: fixed;
   width: 5vw;
   height: 100vh;
   top: 0;
@@ -9,8 +9,22 @@
   display: flex;
   flex-direction: column;
 }
-.sidebar > * {
+.sidebar > div {
+  width: 100%;
+  height: 70px;
+}
+.sidebar > div:hover {
+  background-color: #f2f2f2;
+}
+.sidebar > div > a svg,
+.sidebar > div > svg {
   font-size: 25px;
-  margin: 25px auto;
   color: #606060;
+  margin-left: 27% !important;
+  margin-top: 35%;
+}
+.sidebar > div > a svg:hover,
+.sidebar > div > svg:hover {
+  color: red;
+  cursor: pointer;
 }

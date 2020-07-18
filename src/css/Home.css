@@ -3,6 +3,7 @@
   padding: 0 !important;
   width: 95vw !important;
   margin-left: 5vw !important;
+  padding-top: 85px !important;
 }
 body {
   background-color: #f9f9f9 !important;
@@ -11,6 +12,7 @@ body {
   font-size: 20px;
   font-weight: 600;
   margin: 0px;
+  color: black;
 }
 .home .card img {
   width: 270px;
@@ -50,4 +52,7 @@ body {
   font-size: 12px;
   padding: 0 3px;
   border-radius: 2px;
+}
+.home a:hover {
+  text-decoration: none !important;
 }

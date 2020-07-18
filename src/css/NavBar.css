@@ -1,9 +1,12 @@
 .navigation {
-  width: 95vw !important;
+  width: 93.5vw !important;
   padding: 0 !important;
   margin: 0 !important;
   margin-left: 5vw !important;
   background-color: #ffffff !important;
+  position: fixed;
+  height: 60px;
+  z-index: 100;
 }
 .navigation img {
   width: 100px !important;
