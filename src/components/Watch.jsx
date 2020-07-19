@@ -13,7 +13,7 @@ export class Watch extends Component {
     super(props);
 
     this.state = {
-      //video: this.props.location.videoProps.mainVideo,
+      video: this.props.location.videoProps.mainVideo,
       videos: [1, 2, 3, 4, 5, 4],
     };
   }
@@ -22,7 +22,7 @@ export class Watch extends Component {
       params: {
         part: "snippet",
         maxResults: 5,
-        // q: this.state.video.snippet.tags[0],
+        q: this.state.video.snippet.tags[0],
         key: "AIzaSyD2V0SEzrGHbjUeAih9bXJTi8IvdZywLvY",
       },
     });
@@ -55,8 +55,8 @@ export class Watch extends Component {
                 frameborder="0"
                 title="player"
               ></iframe>
-              <p className="title">Title</p>
-              {/* <p>{this.state.video.mainVideo.title}</p> */}
+              {/*   <p className="title">Title</p>*/}
+              <p className="title">{this.state.video.title}</p>
               <div className="extraInfo">
                 <div>
                   <p>111,111 views .</p>
@@ -95,7 +95,9 @@ export class Watch extends Component {
                 <button>SUBSCRIBE</button>
               </div>
 
-              {/* <p>{this.state.video.mainVideo.snippet.channelTitle}</p> */}
+              <p style={{ marginLeft: "5%" }}>
+                {this.state.video.snippet.channelTitle}
+              </p>
             </div>
           </Col>
           <Col md={4} style={{ paddingTop: "0px" }}>
